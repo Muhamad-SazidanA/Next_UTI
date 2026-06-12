@@ -24,6 +24,21 @@ const pageStyles = `
     object-fit:cover;
 }
 
+.disply-page .display-banner::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:radial-gradient(
+        ellipse at center,
+        rgba(36,72,195,0.03) 0%,
+        rgba(27,53,144,0.15) 37%,
+        rgba(17,34,93,0.35) 87%,
+        rgba(17,34,93,0.35) 100%
+    );
+}
+
 .disply-page .display-overlay{
     position:absolute;
     inset:0;

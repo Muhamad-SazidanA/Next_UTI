@@ -36,7 +36,7 @@ export const itSolutions: NavLink[] = [
   { label: "Cyber Security", href: "/it-solutions/cyber-security" },
   { label: "Internet of Things", href: "/it-solutions/internet-of-things" },
   { label: "Unified Communication", href: "/it-solutions/unified-communication" },
-  { label: "Security System", href: "/it-solutions/security-system" },
+  { label: "Physical Security System", href: "/it-solutions/physical-security-system" },
   { label: "Third Party Maintenance", href: "/it-solutions/third-party-maintenance" },
-  { label: "PC & Laptop", href: "/it-solutions/pc-laptop" },
+  // { label: "PC & Laptop", href: "/it-solutions/pc-laptop" },
 ];

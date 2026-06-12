@@ -19,8 +19,8 @@ const pageStyles = `
     justify-content:space-between;
     gap:70px;
     padding:90px 60px;
-    background:#111;
-    color:white;
+    background:#fff;
+    color:#111827;
     align-items:center;
 }
 
@@ -45,7 +45,7 @@ const pageStyles = `
 
 .cyclone-page .desc{
     margin-top:22px;
-    color:#9CA3AF;
+    color:#4B5563;
     font-size:15px;
     line-height:1.8;
     max-width:520px;
@@ -54,14 +54,12 @@ const pageStyles = `
 .cyclone-page .hero-right{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:1px;
-    background:#222;
+    gap:30px;
     width:520px;
 }
 
 .cyclone-page .stat{
-    background:#111;
-    padding:35px;
+    padding:35px 0;
 }
 
 .cyclone-page .stat h2{
@@ -74,7 +72,7 @@ const pageStyles = `
 
 .cyclone-page .stat p{
     font-size:12px;
-    color:#9CA3AF;
+    color:#64748B;
     margin-top:10px;
     letter-spacing:1px;
     font-weight:600;
@@ -145,9 +143,9 @@ const pageStyles = `
 }
 
 /* DARK */
-.cyclone-page .section-dark{
-    background:#111;
-    color:white;
+.cyclone-page .section-white{
+    background:#fff;
+    color:#111827;
     padding:100px 60px;
 }
 
@@ -159,7 +157,7 @@ const pageStyles = `
     font-weight:700;
 }
 
-.cyclone-page .section-dark h2{
+.cyclone-page .section-white h2{
     font-size:52px;
     line-height:1.1;
     font-weight:800;
@@ -168,7 +166,7 @@ const pageStyles = `
 }
 
 .cyclone-page .desc-dark{
-    color:#9CA3AF;
+    color:#4B5563;
     max-width:650px;
     margin-bottom:50px;
     font-size:15px;
@@ -178,12 +176,12 @@ const pageStyles = `
 .cyclone-page .layers{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    border:1px solid #222;
+    border:1px solid #E5E7EB;
 }
 
 .cyclone-page .layer{
     padding:35px;
-    border-right:1px solid #222;
+    border-right:1px solid #E5E7EB;
 }
 
 .cyclone-page .layer:last-child{ border-right:none; }
@@ -239,44 +237,86 @@ const pageStyles = `
     font-weight:800;
     letter-spacing:-2px;
     margin:10px 0 20px;
+    max-width:650px;
 }
 
 .cyclone-page .section-usecase .desc{
     color:#64748B;
     margin-bottom:40px;
+    max-width:650px;
+    font-size:15px;
+    line-height:1.8;
 }
 
 .cyclone-page .table{
-    border-top:1px solid #E5E7EB;
     background:white;
     border-radius:18px;
     overflow:hidden;
-}
-
-.cyclone-page .table-header,
-.cyclone-page .row{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    padding:18px 24px;
-    border-bottom:1px solid #F1F5F9;
+    border:1px solid #E5E7EB;
+    width:100%;
 }
 
 .cyclone-page .table-header{
-    font-size:12px;
-    color:#94A3B8;
-    font-weight:700;
-    letter-spacing:1px;
+    display:grid;
+    grid-template-columns:minmax(0,2.5fr) minmax(0,1.5fr) minmax(0,1fr);
+    padding:14px 32px;
+    border-bottom:1px solid #E5E7EB;
+    background:#FAFAFA;
+    align-items:center;
 }
 
-.cyclone-page .row span{
+.cyclone-page .table-header span{
+    font-size:11px;
+    color:#94A3B8;
+    font-weight:700;
+    letter-spacing:1.2px;
+}
+
+.cyclone-page .row{
+    display:grid;
+    grid-template-columns:minmax(0,2.5fr) minmax(0,1.5fr) minmax(0,1fr);
+    padding:18px 32px;
+    border-bottom:1px solid #F1F5F9;
+    align-items:center;
+    transition:background .15s;
+}
+
+.cyclone-page .row:last-child{ border-bottom:none; }
+
+.cyclone-page .row:hover{ background:#FFF8F6; }
+
+.cyclone-page .row .row-name{
     font-size:14px;
+    font-weight:500;
     color:#111827;
 }
 
-.cyclone-page .dots{
-    color:#FF5722;
-    letter-spacing:4px;
-    font-size:16px;
+.cyclone-page .row .row-industry{
+    font-size:13px;
+    color:#64748B;
+}
+
+.cyclone-page .dot-group{
+    display:flex;
+    gap:6px;
+    align-items:center;
+}
+
+.cyclone-page .dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    display:inline-block;
+    flex-shrink:0;
+}
+
+.cyclone-page .dot-filled{
+    background:#FF5722;
+}
+
+.cyclone-page .dot-empty{
+    border:1.5px solid #FF5722;
+    opacity:0.35;
 }
 
 /* ORANGE */
@@ -332,20 +372,20 @@ const pageStyles = `
     .cyclone-page .hero-right{ width:100%; max-width:100%; }
     .cyclone-page .features{ grid-template-columns:1fr; }
     .cyclone-page .layers{ grid-template-columns:1fr; }
-    .cyclone-page .layer{ border-right:none; border-bottom:1px solid #222; }
+    .cyclone-page .layer{ border-right:none; border-bottom:1px solid #E5E7EB; }
     .cyclone-page .cards{ grid-template-columns:1fr 1fr; }
 }
 
 @media(max-width:768px){
     .cyclone-page .hero,
     .cyclone-page .section-light,
-    .cyclone-page .section-dark,
+    .cyclone-page .section-white,
     .cyclone-page .section-usecase,
     .cyclone-page .section-orange{ padding:70px 24px; }
 
     .cyclone-page .hero h1,
     .cyclone-page .section-light h2,
-    .cyclone-page .section-dark h2,
+    .cyclone-page .section-white h2,
     .cyclone-page .section-usecase h2,
     .cyclone-page .section-orange h2{ font-size:40px; }
 
@@ -353,13 +393,17 @@ const pageStyles = `
     .cyclone-page .cards{ grid-template-columns:1fr; }
 
     .cyclone-page .table-header,
-    .cyclone-page .row{ grid-template-columns:1fr; gap:10px; }
+    .cyclone-page .row{
+        grid-template-columns:1fr;
+        gap:8px;
+        padding:16px 20px;
+    }
 }
 
 @media (min-width: 1320px) {
     .cyclone-page .hero,
     .cyclone-page .section-light,
-    .cyclone-page .section-dark,
+    .cyclone-page .section-white,
     .cyclone-page .section-usecase,
     .cyclone-page .section-orange {
         padding-left: max(60px, calc((100% - 1200px) / 2 + 60px));
@@ -389,22 +433,35 @@ const layers = [
 ];
 
 const usecases = [
-    { proses: "Data Consolidation", industri: "All Industries", dots: "● ● ●" },
-    { proses: "Invoice Processing (IDP)", industri: "Finance & Banking", dots: "● ● ●" },
-    { proses: "Account Reconciliation", industri: "Banking & FSI", dots: "● ● ●" },
-    { proses: "Order Entry Automation", industri: "Retail & Manufacturing", dots: "● ● ○" },
-    { proses: "Compliance Reporting", industri: "All Industries", dots: "● ● ○" },
-    { proses: "Customer Onboarding", industri: "Telco & BFSI", dots: "● ● ○" },
-    { proses: "Shipment Tracking", industri: "Logistics", dots: "● ○ ○" },
-    { proses: "Fraud Detection Triggers", industri: "Banking", dots: "● ● ●" },
+    { proses: "Data Consolidation",        industri: "All Industries",          score: 3 },
+    { proses: "Invoice Processing (IDP)",  industri: "Finance & Banking",        score: 3 },
+    { proses: "Account Reconciliation",    industri: "Banking & FSI",            score: 3 },
+    { proses: "Order Entry Automation",    industri: "Retail & Manufacturing",   score: 2 },
+    { proses: "Compliance Reporting",      industri: "All Industries",           score: 2 },
+    { proses: "Customer Onboarding",       industri: "Telco & BFSI",             score: 2 },
+    { proses: "Shipment Tracking",         industri: "Logistics",                score: 1 },
+    { proses: "Fraud Detection Triggers",  industri: "Banking",                  score: 3 },
 ];
 
 const valueCards = [
-    { value: "65%", title: "Pengurangan Biaya Operasional", desc: "Otomasi proses manual menurunkan biaya operasional signifikan." },
-    { value: "100%", title: "Akurasi Zero Human Error", desc: "Robot tidak pernah lelah, tidak pernah salah." },
-    { value: "7×24", title: "Jam Operasi Tanpa Henti", desc: "Berjalan terus tanpa downtime." },
-    { value: "US$190M", title: "Series C Funding", desc: "Didukung investasi besar untuk pengembangan." },
+    { value: "65%",    title: "Pengurangan Biaya Operasional", desc: "Otomasi proses manual menurunkan biaya operasional signifikan." },
+    { value: "100%",   title: "Akurasi Zero Human Error",      desc: "Robot tidak pernah lelah, tidak pernah salah." },
+    { value: "7×24",   title: "Jam Operasi Tanpa Henti",       desc: "Berjalan terus tanpa downtime." },
+    { value: "US$190M",title: "Series C Funding",              desc: "Didukung investasi besar untuk pengembangan." },
 ];
+
+function DotGroup({ score }) {
+    return (
+        <span className="dot-group">
+            {[1, 2, 3].map((n) => (
+                <span
+                    key={n}
+                    className={`dot ${n <= score ? "dot-filled" : "dot-empty"}`}
+                />
+            ))}
+        </span>
+    );
+}
 
 export default function Page() {
     return (
@@ -412,6 +469,7 @@ export default function Page() {
             <div className="cyclone-page">
                 <style dangerouslySetInnerHTML={{ __html: pageStyles }} />
 
+                {/* HERO */}
                 <section className="hero">
                     <div className="hero-left">
                         <p className="label">ENTERPRISE HYPERAUTOMATION PLATFORM</p>
@@ -438,6 +496,7 @@ export default function Page() {
                     </div>
                 </section>
 
+                {/* FEATURES */}
                 <section className="section-light">
                     <h2>Teknologi di Balik <br /> Efisiensi Bisnis Anda</h2>
                     <p className="sub">
@@ -458,7 +517,8 @@ export default function Page() {
                     </div>
                 </section>
 
-                <section className="section-dark">
+                {/* ARCHITECTURE */}
+                <section className="section-white">
                     <p className="small-label">02 · PLATFORM ARCHITECTURE</p>
                     <h2>
                         Tiga Layer Platform <br />
@@ -481,6 +541,7 @@ export default function Page() {
                     </div>
                 </section>
 
+                {/* USE CASES */}
                 <section className="section-usecase">
                     <p className="small-label">03 · USE CASES</p>
                     <h2>Proses Prioritas <br /> untuk Diotomasi</h2>
@@ -497,14 +558,15 @@ export default function Page() {
 
                         {usecases.map((u) => (
                             <div key={u.proses} className="row">
-                                <span>{u.proses}</span>
-                                <span>{u.industri}</span>
-                                <span className="dots">{u.dots}</span>
+                                <span className="row-name">{u.proses}</span>
+                                <span className="row-industry">{u.industri}</span>
+                                <DotGroup score={u.score} />
                             </div>
                         ))}
                     </div>
                 </section>
 
+                {/* VALUE */}
                 <section className="section-orange">
                     <h2>Nilai Bisnis yang <br /> Terukur & Nyata</h2>
 

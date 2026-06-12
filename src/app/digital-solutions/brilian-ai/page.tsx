@@ -4,15 +4,15 @@ const pageStyles = `
 .brilian-page *{ margin:0; padding:0; box-sizing:border-box; }
 
 .brilian-page .brilian-hero{
-    background:#f5f5f5;
-    padding:70px 70px 30px;
+    background:#ffffff;
+    padding:70px 70px 0;
     font-family:'Inter', sans-serif;
-    overflow:hidden;
+    overflow:visible;
 }
 
 .brilian-page .brilian-container{
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     justify-content:space-between;
     gap:60px;
 }
@@ -20,7 +20,7 @@ const pageStyles = `
 .brilian-page .brilian-left{ width:50%; }
 
 .brilian-page .brilian-title{
-    font-size:68px;
+    font-size:58px;
     line-height:1.05;
     font-weight:800;
     color:#111827;
@@ -87,36 +87,42 @@ const pageStyles = `
 }
 
 .brilian-page .brilian-label{
-    font-size:12px;
+    font-size:11px;
     color:#9ca3af;
     letter-spacing:2px;
     font-weight:700;
-    margin-bottom:18px;
+    margin-bottom:14px;
     text-transform:uppercase;
 }
 
 .brilian-page .brilian-tags{
     display:flex;
-    flex-wrap:wrap;
-    gap:12px;
+    flex-wrap:nowrap;
+    gap:10px;
+    overflow-x:auto;
+    scrollbar-width:none;
 }
 
+.brilian-page .brilian-tags::-webkit-scrollbar{ display:none; }
+
 .brilian-page .brilian-tag{
-    background:white;
+    background:#ffffff;
     border:1px solid #e5e7eb;
-    padding:10px 18px;
+    padding:8px 16px;
     border-radius:999px;
-    font-size:14px;
+    font-size:13px;
     font-weight:600;
     color:#374151;
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:7px;
+    white-space:nowrap;
+    flex-shrink:0;
 }
 
 .brilian-page .brilian-tag i{
     color:#2563eb;
-    font-size:7px;
+    font-size:8px;
 }
 
 .brilian-page .brilian-right{
@@ -132,60 +138,77 @@ const pageStyles = `
     object-fit:contain;
 }
 
-.brilian-page .brilian-sector{
+.brilian-page .brilian-sector-outer{
     margin-top:45px;
-    border-top:1px solid #e5e7eb;
-    padding-top:20px;
+    margin-left:-70px;
+    margin-right:-70px;
+    background:#F4F7FC;
+    padding:16px 70px;
     display:flex;
     align-items:center;
     gap:30px;
-    flex-wrap:wrap;
+}
+
+.brilian-page .brilian-sector{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    width:100%;
 }
 
 .brilian-page .brilian-sector-title{
-    font-size:12px;
+    font-size:11px;
     color:#9ca3af;
     letter-spacing:2px;
     font-weight:700;
     text-transform:uppercase;
+    white-space:nowrap;
+    flex-shrink:0;
 }
 
 .brilian-page .brilian-sector-items{
     display:flex;
     align-items:center;
-    flex-wrap:wrap;
-    gap:24px;
+    gap:20px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    scrollbar-width:none;
 }
+
+.brilian-page .brilian-sector-items::-webkit-scrollbar{ display:none; }
 
 .brilian-page .brilian-sector-item{
     display:flex;
     align-items:center;
-    gap:10px;
-    color:#6b7280;
+    gap:8px;
+    color:#4b5563;
     font-weight:600;
-    font-size:15px;
+    font-size:14px;
+    white-space:nowrap;
 }
 
 .brilian-page .brilian-sector-item i{
     width:28px;
     height:28px;
     border-radius:8px;
-    background:white;
+    background:#ffffff;
     display:flex;
     align-items:center;
     justify-content:center;
     color:#2563eb;
     border:1px solid #e5e7eb;
-    font-size:13px;
+    font-size:12px;
+    flex-shrink:0;
 }
 
 @media(max-width:991px){
-    .brilian-page .brilian-hero{ padding:50px 25px; }
+    .brilian-page .brilian-hero{ padding:50px 25px 0; }
     .brilian-page .brilian-container{ flex-direction:column; }
     .brilian-page .brilian-left,
     .brilian-page .brilian-right{ width:100%; }
     .brilian-page .brilian-title{ font-size:48px; }
     .brilian-page .brilian-right{ margin-top:20px; }
+    .brilian-page .brilian-sector-outer{ margin-left:-25px; margin-right:-25px; padding:16px 25px; }
 }
 
 @media(max-width:576px){
@@ -311,7 +334,7 @@ const pageStyles = `
 }
 
 .brilian-page .fitur-section{
-    background:#f5f5f5;
+    background:#ffffff;
     padding:90px 70px;
     font-family:'Inter', sans-serif;
     overflow:hidden;
@@ -328,41 +351,64 @@ const pageStyles = `
     font-weight:700;
     letter-spacing:2px;
     text-transform:uppercase;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
 .brilian-page .fitur-title{
-    font-size:58px;
-    line-height:1.05;
+    font-size:42px;
+    line-height:1.1;
     font-weight:800;
     color:#0f172a;
-    margin-bottom:24px;
+    margin-bottom:18px;
 }
 
 .brilian-page .fitur-title span{ color:#2563eb; }
 
 .brilian-page .fitur-desc{
     color:#6b7280;
-    font-size:16px;
+    font-size:15px;
     line-height:1.9;
-    max-width:720px;
+    max-width:600px;
     margin:auto;
 }
 
 .brilian-page .fitur-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:22px;
+    gap:18px;
 }
 
 .brilian-page .fitur-card{
     background:white;
-    border-radius:22px;
-    padding:28px;
+    border-radius:18px;
+    padding:24px;
     border:1px solid #e5e7eb;
     transition:.3s;
     position:relative;
     overflow:hidden;
+}
+
+.brilian-page .fitur-card.fitur-card-combined{
+    grid-column: span 2;
+}
+
+.brilian-page .fitur-card-combined-inner{
+    display:flex;
+    gap:24px;
+    height:100%;
+}
+
+.brilian-page .fitur-card-combined-left{
+    flex:0 0 48%;
+    display:flex;
+    flex-direction:column;
+}
+
+.brilian-page .fitur-card-combined-right{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
 .brilian-page .fitur-card:hover{
@@ -372,108 +418,120 @@ const pageStyles = `
 
 .brilian-page .fitur-number{
     color:#2563eb;
-    font-size:12px;
+    font-size:11px;
     font-weight:700;
     letter-spacing:1px;
-    margin-bottom:22px;
+    margin-bottom:18px;
 }
 
 .brilian-page .fitur-icon{
-    width:48px;
-    height:48px;
-    border-radius:14px;
+    width:40px;
+    height:40px;
+    border-radius:12px;
     background:#f1f5f9;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-bottom:24px;
+    margin-bottom:18px;
     color:#2563eb;
-    font-size:18px;
+    font-size:16px;
 }
 
 .brilian-page .fitur-card-title{
-    font-size:22px;
+    font-size:18px;
     font-weight:700;
     color:#0f172a;
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
 
 .brilian-page .fitur-card-sub{
     color:#2563eb;
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:1px;
     text-transform:uppercase;
-    margin-bottom:18px;
+    margin-bottom:14px;
 }
 
 .brilian-page .fitur-card-desc{
     color:#6b7280;
-    font-size:15px;
+    font-size:13px;
     line-height:1.8;
-    margin-bottom:22px;
+    margin-bottom:18px;
 }
 
 .brilian-page .fitur-tags{
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
+    gap:8px;
 }
 
 .brilian-page .fitur-tag{
     background:#eef4ff;
     color:#2563eb;
-    padding:8px 12px;
+    padding:6px 10px;
     border-radius:999px;
-    font-size:11px;
+    font-size:10px;
     font-weight:600;
 }
 
 .brilian-page .idea-wrapper{
     display:flex;
     flex-direction:column;
-    gap:16px;
+    gap:12px;
+}
+
+.brilian-page .idea-header{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#2563eb;
+    margin-bottom:4px;
 }
 
 .brilian-page .idea-box{
     background:#f8fafc;
     border:1px solid #e5e7eb;
-    border-radius:16px;
-    padding:18px;
+    border-radius:14px;
+    padding:14px 16px;
 }
 
 .brilian-page .idea-box-title{
-    font-size:16px;
+    font-size:13px;
     font-weight:700;
     color:#0f172a;
-    margin-bottom:10px;
+    margin-bottom:6px;
 }
 
 .brilian-page .idea-box-desc{
     color:#6b7280;
-    font-size:13px;
-    line-height:1.7;
-    margin-bottom:12px;
+    font-size:11px;
+    line-height:1.6;
+    margin-bottom:8px;
 }
 
 .brilian-page .idea-score{
     color:#2563eb;
-    font-size:12px;
+    font-size:11px;
     font-weight:700;
 }
 
 @media(max-width:1200px){
     .brilian-page .fitur-grid{ grid-template-columns:repeat(2,1fr); }
+    .brilian-page .fitur-card.fitur-card-combined{ grid-column: span 2; }
 }
 
 @media(max-width:768px){
     .brilian-page .fitur-section{ padding:70px 25px; }
-    .brilian-page .fitur-title{ font-size:40px; }
+    .brilian-page .fitur-title{ font-size:32px; }
     .brilian-page .fitur-grid{ grid-template-columns:1fr; }
+    .brilian-page .fitur-card.fitur-card-combined{ grid-column: span 1; }
+    .brilian-page .fitur-card-combined-inner{ flex-direction:column; }
 }
 
 .brilian-page .security-section{
-    background:#f5f5f5;
+    background:#ffffff;
     padding:90px 70px;
     font-family:'Inter', sans-serif;
     overflow:hidden;
@@ -498,99 +556,105 @@ const pageStyles = `
 }
 
 .brilian-page .security-title{
-    font-size:58px;
+    font-size:52px;
     line-height:1.05;
     font-weight:800;
     color:#0f172a;
-    margin-bottom:24px;
+    margin-bottom:20px;
 }
 
 .brilian-page .security-title span{ color:#2563eb; }
 
 .brilian-page .security-desc{
     color:#6b7280;
-    font-size:16px;
+    font-size:15px;
     line-height:1.9;
-    max-width:620px;
-    margin-bottom:40px;
+    max-width:500px;
+    margin-bottom:36px;
 }
 
 .brilian-page .security-features{
     display:flex;
     flex-direction:column;
-    gap:16px;
+    gap:0;
 }
 
 .brilian-page .security-feature{
-    background:white;
-    border:1px solid #e5e7eb;
-    border-radius:20px;
-    padding:22px;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid #f1f5f9;
+    border-radius:0;
+    padding:18px 0;
     display:flex;
     align-items:flex-start;
-    gap:18px;
+    gap:16px;
     transition:.3s;
 }
 
+.brilian-page .security-feature:first-child{
+    border-top:1px solid #f1f5f9;
+}
+
 .brilian-page .security-feature:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.05);
+    transform:none;
+    box-shadow:none;
+    background:transparent;
 }
 
 .brilian-page .security-icon{
-    width:48px;
-    height:48px;
-    border-radius:14px;
+    width:40px;
+    height:40px;
+    border-radius:12px;
     background:#f1f5f9;
     display:flex;
     align-items:center;
     justify-content:center;
     color:#2563eb;
-    font-size:18px;
+    font-size:16px;
     flex-shrink:0;
 }
 
 .brilian-page .security-feature-title{
-    font-size:18px;
+    font-size:16px;
     font-weight:700;
     color:#0f172a;
-    margin-bottom:8px;
+    margin-bottom:5px;
 }
 
 .brilian-page .security-feature-desc{
     color:#6b7280;
-    font-size:14px;
-    line-height:1.8;
+    font-size:13px;
+    line-height:1.7;
 }
 
 .brilian-page .security-right{ width:52%; }
 
 .brilian-page .security-dashboard{
     background:white;
-    border-radius:28px;
-    padding:30px;
+    border-radius:24px;
+    padding:28px;
     border:1px solid #e5e7eb;
-    box-shadow:0 20px 40px rgba(0,0,0,0.05);
+    box-shadow:0 8px 30px rgba(0,0,0,0.06);
 }
 
 .brilian-page .dashboard-title{
-    font-size:18px;
+    font-size:16px;
     font-weight:700;
     color:#0f172a;
-    margin-bottom:24px;
+    margin-bottom:20px;
 }
 
 .brilian-page .dashboard-list{
     display:flex;
     flex-direction:column;
-    gap:14px;
+    gap:10px;
 }
 
 .brilian-page .dashboard-item{
     background:#f8fafc;
-    border:1px solid #e5e7eb;
-    border-radius:16px;
-    padding:14px 18px;
+    border:1px solid #f1f5f9;
+    border-radius:12px;
+    padding:12px 16px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -600,52 +664,54 @@ const pageStyles = `
 .brilian-page .dashboard-left{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:10px;
 }
 
 .brilian-page .dashboard-check{
-    width:28px;
-    height:28px;
+    width:22px;
+    height:22px;
     border-radius:999px;
     background:#dcfce7;
     color:#16a34a;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:12px;
+    font-size:10px;
+    flex-shrink:0;
 }
 
 .brilian-page .dashboard-text{
-    font-size:14px;
+    font-size:13px;
     font-weight:600;
     color:#0f172a;
 }
 
 .brilian-page .dashboard-badge{
-    padding:8px 14px;
+    padding:5px 12px;
     border-radius:999px;
     font-size:11px;
     font-weight:700;
+    white-space:nowrap;
 }
 
 .brilian-page .badge-green{ background:#dcfce7; color:#16a34a; }
 .brilian-page .badge-blue{ background:#dbeafe; color:#2563eb; }
 .brilian-page .badge-yellow{ background:#fef3c7; color:#d97706; }
 
-.brilian-page .dashboard-progress{ margin-top:28px; }
+.brilian-page .dashboard-progress{ margin-top:24px; }
 
 .brilian-page .progress-label{
     display:flex;
     justify-content:space-between;
-    margin-bottom:12px;
-    font-size:13px;
+    margin-bottom:10px;
+    font-size:12px;
     font-weight:600;
     color:#475569;
 }
 
 .brilian-page .progress-bar{
     width:100%;
-    height:10px;
+    height:8px;
     background:#e2e8f0;
     border-radius:999px;
     overflow:hidden;
@@ -663,7 +729,7 @@ const pageStyles = `
     .brilian-page .security-container{ flex-direction:column; }
     .brilian-page .security-left,
     .brilian-page .security-right{ width:100%; }
-    .brilian-page .security-title{ font-size:42px; }
+    .brilian-page .security-title{ font-size:36px; }
 }
 
 @media (min-width: 1320px) {
@@ -671,6 +737,12 @@ const pageStyles = `
     .brilian-page .why-brilian,
     .brilian-page .fitur-section,
     .brilian-page .security-section {
+        padding-left: max(70px, calc((100% - 1200px) / 2 + 70px));
+        padding-right: max(70px, calc((100% - 1200px) / 2 + 70px));
+    }
+    .brilian-page .brilian-sector-outer{
+        margin-left: calc(-1 * max(70px, calc((100% - 1200px) / 2 + 70px)));
+        margin-right: calc(-1 * max(70px, calc((100% - 1200px) / 2 + 70px)));
         padding-left: max(70px, calc((100% - 1200px) / 2 + 70px));
         padding-right: max(70px, calc((100% - 1200px) / 2 + 70px));
     }
@@ -701,30 +773,36 @@ const fiturCards: Array<{
     desc?: string;
     tags?: string[];
     ideas?: { title: string; desc: string; score: string }[];
+    isCombined?: boolean;
 }> = [
         { number: "01 / 08", icon: "fa-folder", title: "Manajemen KB", sub: "Knowledge Base", desc: "Sistem penyimpanan dokumen internal yang terstruktur, dapat diproses otomatis menjadi embeddings untuk pencarian cerdas.", tags: ["Embedding Otomatis", "Folder & Metadata", "Access Control"] },
         { number: "02 / 08", icon: "fa-comments", title: "Tanya Apa Aja", sub: "Chat with AI from KB", desc: "Antarmuka percakapan berbasis AI yang memahami konteks dokumen dan memberikan jawaban akurat dari knowledge base.", tags: ["Bahasa Manusia", "Respons Kontekstual", "Referensi Dokumen"] },
         { number: "03 / 08", icon: "fa-wand-magic-sparkles", title: "Buatin Laporan", sub: "Generate Report from KB", desc: "Beri perintah, AI menyusun laporan terstruktur dari ringkasan data internal yang ada di knowledge base secara otomatis.", tags: ["AI Generation", "Template Flexible", "Siap Dibagikan"] },
         { number: "04 / 08", icon: "fa-chart-simple", title: "Analisa Laporan", sub: "Analyze Reports in KB", desc: "AI menganalisis laporan internal dan menyajikan insight visual, pola, anomali, dan tren strategis terdeteksi otomatis.", tags: ["Analisis Otomatis", "Visualisasi", "Deteksi Pola"] },
-        { number: "05 / 08", icon: "fa-lightbulb", title: "Pikirin Ide", sub: "Related Idea Generation", desc: "AI membantu brainstorming strategis dengan menggabungkan informasi internal dan sumber eksternal untuk menghasilkan ide relevan.", tags: ["Ide Kontekstual", "Internal & Eksternal", "Multi-Topik"] },
         {
-            number: "06 / 08",
+            number: "05 / 08",
+            icon: "fa-lightbulb",
+            title: "Pikirin Ide",
+            sub: "Related Idea Generation",
+            desc: "AI membantu brainstorming strategis dengan menggabungkan informasi internal dan sumber eksternal untuk menghasilkan ide relevan.",
+            tags: ["Ide Kontekstual", "Internal & Eksternal", "Multi-Topik"],
+            isCombined: true,
             ideas: [
                 { title: "Ekspansi ke Segmen UKM Digital", desc: "Berdasarkan tren pasar Q3 + data internal.", score: "95% relevan" },
                 { title: "Partnership Ekosistem Fintech Lokal", desc: "Berdasarkan riset kompetitor + SOP.", score: "88% relevan" },
                 { title: "Bundling Produk untuk Pemerintah", desc: "Analisa regulasi + portofolio internal.", score: "82% relevan" },
             ],
         },
-        { number: "07 / 08", icon: "fa-globe", title: "Terjemahin Aja", sub: "Translate from KB", desc: "Terjemahan multi-bahasa otomatis berbasis AI dengan pemahaman konteks profesional — dokumen bisnis, teknis, dan hukum.", tags: ["Multi-Bahasa", "Konteks Profesional", "Format Dokumen"] },
-        { number: "08 / 08", icon: "fa-microphone-lines", title: "Rangkumin Meeting", sub: "Speech to Text", desc: "Rekam, transkripsi, dan ringkas rapat otomatis. Hasil langsung masuk ke knowledge base untuk referensi tindak lanjut.", tags: ["Transkripsi Otomatis", "Ringkasan AI", "Simpan ke KB"] },
+        { number: "06 / 08", icon: "fa-globe", title: "Terjemahin Aja", sub: "Translate from KB", desc: "Terjemahan multi-bahasa otomatis berbasis AI dengan pemahaman konteks profesional — dokumen bisnis, teknis, dan hukum.", tags: ["Multi-Bahasa", "Konteks Profesional", "Format Dokumen"] },
+        { number: "07 / 08", icon: "fa-microphone-lines", title: "Rangkumin Meeting", sub: "Speech to Text", desc: "Rekam, transkripsi, dan ringkas rapat otomatis. Hasil langsung masuk ke knowledge base untuk referensi tindak lanjut.", tags: ["Transkripsi Otomatis", "Ringkasan AI", "Simpan ke KB"] },
         { number: "08 / 08", icon: "fa-magnifying-glass", title: "Riset Market", sub: "Related Market Research", desc: "Gabungkan data internal dengan sumber publik untuk insight kompetitif yang relevan dengan sektor industri dan lokasi Anda.", tags: ["Analisis Eksternal", "Insight Pasar", "Format Visual"] },
     ];
 
 const securityFeatures = [
-    { icon: "fa-flag", title: "Lokal di Cloud Indonesia", desc: "Semua proses AI berjalan di infrastruktur cloud dalam yurisdiksi nasional. Tidak ada transfer data keluar negeri." },
+    { icon: "fa-map-location-dot", title: "Lokal di Cloud Indonesia", desc: "Semua proses AI berjalan di infrastruktur cloud dalam yurisdiksi nasional. Tidak ada transfer data keluar negeri." },
     { icon: "fa-lock", title: "Enkripsi End-to-End", desc: "Data dienkripsi saat transit maupun saat diam menggunakan standar enkripsi industri AES-256." },
-    { icon: "fa-users", title: "Role Based Access Control", desc: "Kontrol akses granular per divisi, tim, dan pengguna — tidak semua bisa baca semua dokumen." },
-    { icon: "fa-scroll", title: "Audit Trail Lengkap", desc: "Setiap akses, query, dan perubahan dicatat dalam log audit yang dapat diekspor untuk compliance review." },
+    { icon: "fa-user-shield", title: "Role Based Access Control", desc: "Kontrol akses granular per divisi, tim, dan pengguna — tidak semua bisa baca semua dokumen." },
+    { icon: "fa-clipboard-list", title: "Audit Trail Lengkap", desc: "Setiap akses, query, dan perubahan dicatat dalam log audit yang dapat diekspor untuk compliance review." },
 ];
 
 const compliance: Array<{ text: string; badge: string; badgeClass: string }> = [
@@ -786,7 +864,8 @@ export default function Page() {
                         </div>
                     </div>
 
-                    <div className="brilian-sector">
+                    <div className="brilian-sector-outer">
+                        <div className="brilian-sector">
                         <div className="brilian-sector-title">Sektor Yang Dilayani</div>
                         <div className="brilian-sector-items">
                             {sectors.map((s) => (
@@ -795,6 +874,7 @@ export default function Page() {
                                     {s.label}
                                 </div>
                             ))}
+                        </div>
                         </div>
                     </div>
                 </section>
@@ -843,21 +923,37 @@ export default function Page() {
 
                     <div className="fitur-grid">
                         {fiturCards.map((c, i) => (
-                            <div key={i} className="fitur-card">
-                                <div className="fitur-number">{c.number}</div>
-
-                                {c.ideas ? (
-                                    <div className="idea-wrapper">
-                                        {c.ideas.map((idea) => (
-                                            <div key={idea.title} className="idea-box">
-                                                <div className="idea-box-title">{idea.title}</div>
-                                                <div className="idea-box-desc">{idea.desc}</div>
-                                                <div className="idea-score">{idea.score}</div>
+                            <div key={i} className={`fitur-card${c.isCombined ? ' fitur-card-combined' : ''}`}>
+                                {c.isCombined ? (
+                                    <div className="fitur-card-combined-inner">
+                                        <div className="fitur-card-combined-left">
+                                            <div className="fitur-number">{c.number}</div>
+                                            <div className="fitur-icon">
+                                                <i className={`fa-solid ${c.icon}`}></i>
                                             </div>
-                                        ))}
+                                            <div className="fitur-card-title">{c.title}</div>
+                                            <div className="fitur-card-sub">{c.sub}</div>
+                                            <div className="fitur-card-desc">{c.desc}</div>
+                                            <div className="fitur-tags">
+                                                {c.tags?.map((t) => (
+                                                    <div key={t} className="fitur-tag">{t}</div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="fitur-card-combined-right">
+                                            <div className="idea-header">Ide yang Dihasilkan AI</div>
+                                            {c.ideas?.map((idea) => (
+                                                <div key={idea.title} className="idea-box">
+                                                    <div className="idea-box-title">{idea.title}</div>
+                                                    <div className="idea-box-desc">{idea.desc}</div>
+                                                    <div className="idea-score">{idea.score}</div>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 ) : (
                                     <>
+                                        <div className="fitur-number">{c.number}</div>
                                         <div className="fitur-icon">
                                             <i className={`fa-solid ${c.icon}`}></i>
                                         </div>

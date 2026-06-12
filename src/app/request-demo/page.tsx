@@ -315,30 +315,17 @@ function ScrollAnimator() {
 }
 
 function MapEmbed() {
-    const [loaded, setLoaded] = useState(false);
     return (
         <div className="mt-5 rounded-2xl overflow-hidden border border-line bg-white shadow-soft">
             <div className="aspect-[16/9] relative">
-                {loaded ? (
-                    <iframe
-                        title="Lokasi UTI"
-                        src="https://maps.google.com/maps?q=Jl.+Siantar+No.18+Cideng+Jakarta+Pusat&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        className="h-full w-full border-0"
-                        allowFullScreen
-                        referrerPolicy="no-referrer-when-downgrade"
-                    />
-                ) : (
-                    <button
-                        onClick={() => setLoaded(true)}
-                        className="absolute inset-0 w-full h-full flex flex-col items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 transition cursor-pointer"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
-                        </svg>
-                        <span className="text-sm font-medium text-brand">Klik untuk melihat lokasi</span>
-                        <span className="text-xs text-muted">Jl. Siantar No.18, Cideng, Jakarta Pusat</span>
-                    </button>
-                )}
+                <iframe
+                    title="Lokasi UTI"
+                    src="https://maps.google.com/maps?q=Jl.+Siantar+No.18+Cideng+Jakarta+Pusat&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    className="h-full w-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                />
             </div>
         </div>
     );

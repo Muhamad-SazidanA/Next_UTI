@@ -51,7 +51,7 @@ const pageStyles = `
 }
 
 .syclus-pg .hero-title{
-    font-size:68px;
+    font-size:50px;
     line-height:1.05;
     font-weight:800;
     color:#111827;
@@ -437,7 +437,7 @@ const pageStyles = `
 }
 
 .syclus-pg .impact-left h2{
-    font-size:64px;
+    font-size:44px;
     line-height:1.02;
     font-weight:800;
     color:#fff;
@@ -542,7 +542,7 @@ const pageStyles = `
 }
 
 .syclus-pg .workflow-top h2{
-    font-size:64px;
+    font-size:54px;
     line-height:1.1;
     font-weight:800;
     color:#111827;
@@ -789,7 +789,7 @@ const pageStyles = `
 }
 
 .syclus-pg .features-top h2{
-    font-size:62px;
+    font-size:58px;
     line-height:1.05;
     font-weight:800;
     color:#111827;
@@ -983,7 +983,7 @@ const pageStyles = `
 }
 
 .syclus-pg .ai-learning-left h2{
-    font-size:58px;
+    font-size:52px;
     line-height:1.05;
     font-weight:800;
     color:#111827;
@@ -1327,10 +1327,10 @@ export default function Page() {
                             HOW IT WORKS
                         </div>
                         <h2>
-                            The SYCLUS <br />
+                            The SYCLUS<br/>
                             <span>AP Automation</span> Approach
                         </h2>
-                        <p>
+                        <p>The AP
                             Siklus AP yang sepenuhnya otomatis dan menyeluruh — mulai dari
                             pengambilan dokumen hingga pembayaran, terintegrasi langsung ke dalam sistem ERP Anda.
                         </p>
